@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+// App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import './App.css';
+import Allprograms from './Screens/AllPrograms/Allprograms';
+import CollegeFinderPage from './Screens/CollegeFinder/CollegeFinder';
+import HomePage from './Screens/Home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <div className="Content">
+          <Routes>
+            <Route exact path="/" element={<HomePage/>} />
+            <Route path="/all-programs" element={<Allprograms/>} />
+            <Route path="/college-finder" element={<CollegeFinderPage/>} />
+            {/* <Route path="/popular-courses" component={PopularCoursesPage} /> */}
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

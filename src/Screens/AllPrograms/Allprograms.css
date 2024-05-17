@@ -1,0 +1,12 @@
+.programs-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 50px;
+}
+.all-programs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
